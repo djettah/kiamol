@@ -5,7 +5,8 @@ metadata:
   labels:
     kiamol: ch08-lab
 spec:
-  type: LoadBalancer
+  type: ClusterIP
+  clusterIP: None
   ports:
     - port: 8088
       targetPort: 80

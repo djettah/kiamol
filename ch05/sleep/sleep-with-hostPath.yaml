@@ -22,3 +22,12 @@ spec:
           hostPath:
             path: /
             type: Directory
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: kiamol
+                  operator: In
+                  values:
+                    - ch05
