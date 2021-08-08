@@ -15,7 +15,8 @@ spec:
       serviceAccountName: kube-explorer-lab
       automountServiceAccountToken: true
       containers:
-        - image: kiamol/ch17-kube-explorer
+        - image: kiamol/ch17-kube-explorer:test
+          imagePullPolicy: Never
           name: web
           ports:
             - containerPort: 80

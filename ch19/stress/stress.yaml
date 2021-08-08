@@ -5,7 +5,7 @@ metadata:
   labels:
     kiamol: ch19
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: stress
@@ -19,5 +19,5 @@ spec:
         image: kiamol/ch19-stress
         env:
           - name: MEMORY_STRESS_MB
-            value: "300"
+            value: "50"
       

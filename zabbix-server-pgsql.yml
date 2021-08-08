@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: zabbix
+  name: zabbix-server-pgsql
+spec:
+  paused: true
+  selector:
+    matchLabels:
+      app: zabbix
+  template:
+    metadata:
+      labels:
+        app: zabbix
+    spec:
+      containers:
+      - name: zabbix-server-pgsql
+        image: zabbix/zabbix-server-pgsql:latest

@@ -16,7 +16,7 @@ data:
         - source_labels: 
             - __meta_kubernetes_namespace
           action: keep
-          regex: kiamol-ch14-test 
+          regex: default
         - source_labels: 
             - __meta_kubernetes_pod_annotationpresent_prometheus_io_scrape
             - __meta_kubernetes_pod_annotation_prometheus_io_scrape

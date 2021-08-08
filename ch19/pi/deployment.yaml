@@ -4,6 +4,8 @@ metadata:
   name: pi-web
   labels:
     kiamol: ch19
+    app: pi-web
+
 spec:
   selector:
     matchLabels:
@@ -25,3 +27,23 @@ spec:
               cpu: 250m
             requests:
               cpu: 125m
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: region
+                operator: In
+                values:
+                - EU
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - pi-web
+              topologyKey: "kubernetes.io/hostname"

@@ -1,0 +1,3 @@
+servicePort: 8090
+serviceType: LoadBalancer
+replicaCount: 2

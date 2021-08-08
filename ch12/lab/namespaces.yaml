@@ -18,3 +18,36 @@ metadata:
   name: pi-uat
   labels:
     kiamol: ch12-lab
+# ---
+# apiVersion: v1
+# kind: ResourceQuota
+# metadata:
+#   name: cpu-quota
+#   namespace: pi-dev
+#   labels:
+#     kiamol: ch12-lab
+# spec:
+#   hard:
+#     limits.cpu: 250m
+# ---
+# apiVersion: v1
+# kind: ResourceQuota
+# metadata:
+#   name: cpu-quota
+#   namespace: pi-test
+#   labels:
+#     kiamol: ch12-lab
+# spec:
+#   hard:
+#     limits.cpu: 250m
+# ---
+# apiVersion: v1
+# kind: ResourceQuota
+# metadata:
+#   name: cpu-quota
+#   namespace: pi-uat
+#   labels:
+#     kiamol: ch12-lab
+# spec:
+#   hard:
+#     limits.cpu: 750m

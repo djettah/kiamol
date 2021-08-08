@@ -4,11 +4,11 @@ metadata:
   name: pv01
 spec:
   capacity:
-    storage: 50Mi
+    storage: 2Gi
   accessModes:
     - ReadWriteOnce
   local:
-    path: /volumes/pv01 
+    path: /volumes/pv01
   nodeAffinity:
     required:
       nodeSelectorTerms:
