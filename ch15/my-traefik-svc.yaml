@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: my-traefik
+    meta.helm.sh/release-namespace: ingress
+    url: http://10.31.193.83:30900/dashboard/#/
+  creationTimestamp: "2021-08-02T06:10:53Z"
+  labels:
+    app.kubernetes.io/instance: my-traefik
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: traefik
+    helm.sh/chart: traefik-10.1.1
+  name: my-traefik
+  namespace: ingress
+  resourceVersion: "77385736"
+  uid: bee3cb3c-7f15-4cd0-94a1-ffa28b099f1c
+spec:
+  clusterIP: 10.111.128.24
+  clusterIPs:
+  - 10.111.128.24
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: web
+    nodePort: 31214
+    port: 80
+    protocol: TCP
+    targetPort: web
+  - name: websecure
+    nodePort: 30872
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  - name: mgmt
+    nodePort: 30900
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app.kubernetes.io/instance: my-traefik
+    app.kubernetes.io/name: traefik
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
