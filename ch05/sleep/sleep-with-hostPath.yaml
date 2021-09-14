@@ -11,6 +11,7 @@ spec:
       labels:
         app: sleep
     spec:
+      restartPolicy: Never
       containers:
         - name: sleep
           image: kiamol/ch03-sleep
